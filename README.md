@@ -130,3 +130,94 @@ capa · CAPEv2 · volatility3 · signature-base · analyst-ai-pack
 ---
 
 Atualizado 2026-07-15 — mapa exploit×skill executado via API (sem clone local).
+---
+
+## Estrategias e tecnicas (busca X 2026-07-15)
+
+Sintese do que circula no X para **pentest / invasao autorizada** em plataformas cripto — mapeado para forks do account.
+
+### Camada 1 — Superficie da plataforma (web / API / CEX-style)
+
+Ordem profissional (nao pular recon):
+
+1. **Inventory first** — listar rotas, webhooks, jobs, handlers publicos antes de testar (post white-box @eric_m_freeman)
+2. **AuthZ em todo endpoint** — IDOR / tenant bypass em path, body, query, headers
+3. **Identity mutation** — endpoints que escrevem user/org/role/wallet-link (account takeover)
+4. **Rotas publicas** — SSRF, path traversal, open redirect, upload, proxy, webhook
+5. **API recon** — hidden params, mass assignment, server-side parameter pollution (PortSwigger API path)
+6. **Camada AI/agent** (se a plataforma tem bot/LLM) — tool abuse, SSRF via fetch, sandbox escape
+
+**Skills/tools paralelos no account:** Claude-Red · Claude-BugHunter · claude-bug-bounty · red-run · pentest-ai-agents · ctf-skills
+
+### Camada 2 — Wallet / extensao / assinatura (superficie Web3 real)
+
+Tecnicas citadas (guia Valkyri / wallet pentest no X):
+
+- XSS em extensao / dApp inject
+- Phishing de dominio (fake Revoke, fake CEX)
+- Aprovacoes ilimitadas / permit / permit2
+- Assinatura maliciosa (typed data enganoso)
+- Supply-chain npm/SDK (ex.: caso INJ SDK no X — keys via telemetry fake)
+- Clipboard / deep-link / QR hijack (defesa)
+
+**Forks novos:**
+- [wallet-pentesting-article](https://github.com/maux339-cpu/wallet-pentesting-article)
+- [awesome-web3-security](https://github.com/maux339-cpu/awesome-web3-security) (skills wallet-security, solana, etc.)
+- [browser-extension](https://github.com/maux339-cpu/browser-extension) (Revoke.cash)
+- [eth-phishing-detect](https://github.com/maux339-cpu/eth-phishing-detect)
+- [safe-smart-account](https://github.com/maux339-cpu/safe-smart-account)
+
+### Camada 3 — Smart contract / protocolo DeFi
+
+Metodologia que o X reforca:
+
+1. **Entender o protocolo antes do codigo** (docs, "o que protege?", arquitetura)
+2. Metricas / grafo de calls antes de line-by-line
+3. Invariantes economicas > so reentrancy checklist
+4. Casos reais: DeFiHackLabs + solodit
+5. Static → fuzz → formal
+6. PoC Foundry + report Immunefi/C4/Sherlock
+
+**Skills SC:** pashov-skills · trailofbits-skills · solskill · sc-auditor · quillshield · scv-scan · [avm-contract-audit-skill](https://github.com/maux339-cpu/avm-contract-audit-skill) (Algorand) · [tw-agent-skills](https://github.com/maux339-cpu/tw-agent-skills) · [chaingpt-claude-skill](https://github.com/maux339-cpu/chaingpt-claude-skill)
+
+**Tools:** slither · aderyn · echidna · medusa · mythril · foundry · hevm · kontrol · halmos · forge-poc-templates
+
+### Camada 4 — Supply chain / ops (ataque sem "quebrar cripto")
+
+- Compromisso de conta GitHub dev → commit malicioso em SDK
+- Dependencias transitivas npm
+- Fake sites em emergencia de exploit (SEO + reply spam)
+- Circuit breakers / IR ainda fracos (post-mortem Aave no X)
+
+**Defesa / intel:** Cryptocurrency-Security-Audit-Guide · dark-forest handbook · Knowledge-Base · analyst-ai-pack · capa
+
+### AI pentest agents (TCM / X)
+
+| Nome | Papel | No account? |
+|------|--------|-------------|
+| Claude-Red / BugHunter | web red team / bounty | sim |
+| PentAGI | autonomous pentest | sim (fork anterior) |
+| trailofbits-skills | SC + audit workflow | sim |
+| awesome-web3-security | pack skills Web3 multi-dominio | **novo** |
+| awesome-claude-code-subagents | subagent blockchain-developer | **novo** |
+
+### Matriz rapida tecnica → skill/tool
+
+| Tecnica | Paralelo no GitHub |
+|---------|-------------------|
+| Recon web CEX/dApp | Claude-BugHunter, reconftw, theHarvester |
+| IDOR / authz API | Claude-Red (idor), BugHunter |
+| XSS dApp / wallet UI | Claude-Red (xss) + wallet-pentesting-article |
+| Phishing / fake domain | eth-phishing-detect, browser-extension (Revoke) |
+| Approval drain | awesome-web3-security (wallet-security), dark-forest |
+| SC reentrancy/oracle | DeFiHackLabs + slither + pashov/ToB skills |
+| Invariantes | echidna/medusa/halmos + pashov |
+| Bridge/L2 | kali-claw + DeFiHackLabs + C4 LayerZero |
+| Supply chain SDK | trufflehog, code review skills, Socket-style mindset |
+| Report | forge-poc-templates + BugHunter report gates |
+
+### Politica
+
+Apenas alvos **autorizados** (bounty, contrato, lab). Nao usar material para drain de carteiras de terceiros.
+
+Atualizado 2026-07-15 — busca X estrategias pentest plataformas cripto + forks paralelos.

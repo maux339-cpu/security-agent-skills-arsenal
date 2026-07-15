@@ -1,42 +1,40 @@
 # security-agent-skills-arsenal
 
-Indice de forks em maux339-cpu — pentest, skills de agente, malware analysis (pesquisa) e security cripto/DeFi.
+Indice de forks (`maux339-cpu`) — pentest, malware analysis (pesquisa), DeFi/SC exploits (lab).
 
-**Uso autorizado apenas.** Nao e kit de malware operacional.
+**Uso autorizado apenas** (audit, bounty, CTF, lab). Nao e kit de ataque a mainnet.
 
-## Skills / red team / bounty
-- https://github.com/maux339-cpu/Claude-Red
-- https://github.com/maux339-cpu/Claude-BugHunter
-- https://github.com/maux339-cpu/claude-bug-bounty
-- https://github.com/maux339-cpu/red-run
-- https://github.com/maux339-cpu/offensive-claude
-- https://github.com/maux339-cpu/ctf-skills
-- https://github.com/maux339-cpu/Anthropic-Cybersecurity-Skills
-- https://github.com/maux339-cpu/Claude-Code-CyberSecurity-Skill
-- https://github.com/maux339-cpu/AI-agent-master-cyber-skills-list
-- https://github.com/maux339-cpu/analyst-ai-pack
-- https://github.com/maux339-cpu/pentest-ai-agents
-- https://github.com/maux339-cpu/kali-claw
+## Skills Claude — smart contract / audit (do X)
 
-## Malware analysis / DFIR
-- https://github.com/maux339-cpu/capa
-- https://github.com/maux339-cpu/CAPEv2
-- https://github.com/maux339-cpu/volatility3
-- https://github.com/maux339-cpu/signature-base
-- https://github.com/maux339-cpu/yara
-- https://github.com/maux339-cpu/protections-artifacts
-- https://github.com/maux339-cpu/chatcli
-- https://github.com/maux339-cpu/intel-codex
+| Repo | Upstream |
+|------|----------|
+| [pashov-skills](https://github.com/maux339-cpu/pashov-skills) | pashov/skills |
+| [trailofbits-skills](https://github.com/maux339-cpu/trailofbits-skills) | trailofbits/skills |
+| [solskill](https://github.com/maux339-cpu/solskill) | Cyfrin/solskill |
+| [scv-scan](https://github.com/maux339-cpu/scv-scan) | kadenzipfel/scv-scan |
+| [quillshield_skills](https://github.com/maux339-cpu/quillshield_skills) | quillai-network |
+| [sc-auditor](https://github.com/maux339-cpu/sc-auditor) | Archethect/sc-auditor |
 
-## Crypto / DeFi / plataformas
-- https://github.com/maux339-cpu/DeFiHackLabs
-- https://github.com/maux339-cpu/DeFiVulnLabs
-- https://github.com/maux339-cpu/reentrancy-attacks
-- https://github.com/maux339-cpu/building-secure-contracts
-- https://github.com/maux339-cpu/Web3-Security-Library
-- https://github.com/maux339-cpu/Knowledge-Base
-- https://github.com/maux339-cpu/Blockchain-dark-forest-selfguard-handbook
-- https://github.com/maux339-cpu/security-and-auditing-full-course-s23
-- https://github.com/maux339-cpu/arsenal-osint-defi-2026
+## Labs de exploits SC/DeFi (educacional)
 
-Atualizado 2026-07-15 — forks remotos only.
+- DeFiHackLabs, DeFiVulnLabs, reentrancy-attacks
+- damn-vulnerable-defi, ethernaut
+- building-secure-contracts, not-so-smart-contracts
+- Solidity-Security-Compendium
+
+## Ferramentas audit / fuzz / formal
+
+- slither, echidna, medusa, mythril, aderyn, foundry
+- hevm, kontrol, halmos, Certora Tutorials
+- forge-poc-templates (Immunefi), 4naly3er, solodit_content
+
+## Contests / plataformas
+
+- code-423n4 contests, sherlock-v2-core
+- paradigmxyz/evmbench, flux, solady
+
+## Politica
+
+Forks remotos only. Analise dinamica em sandbox. Pentest so com autorizacao.
+
+Atualizado 2026-07-15 (busca X: exploits SC/cripto)
